@@ -1,0 +1,112 @@
+/* ============================================================
+   KARTRIBE · DESIGN TOKENS
+   Paleta activa: C · Sumi Mono (bright)
+   No modificar sin aprobación. Ver DESIGN-SYSTEM.md
+   ============================================================ */
+
+:root {
+  /* Color — base */
+  --krt-color-bg: #0D0C0F;
+  --krt-color-surface: #17151A;
+  --krt-color-surface-alt: #211C25;
+  --krt-color-border: #3A323C;
+  --krt-color-text: #FFFDF7;
+  --krt-color-text-muted: #B9B1BE;
+
+  /* Color — acción */
+  --krt-color-primary: #DE3529;
+  --krt-color-primary-hover: #C92C21;
+  --krt-color-primary-active: #B0251B;
+  --krt-color-primary-bright: #FF6A5C;
+
+  /* Color — acentos japoneses */
+  --krt-color-accent: #FFD24A;
+  --krt-color-accent-strong: #FFE38A;
+  --krt-color-accent-text: #1A1206;
+  --krt-color-ai: #C9BED8;
+  --krt-color-mizu: #E9E4DA;
+  --krt-color-kin: #E8B84A;
+
+  /* Color — semánticos */
+  --krt-color-success: #5CEB9A;
+  --krt-color-warning: #FFD166;
+  --krt-color-error: #FF7A70;
+  --krt-color-info: #7CC4FF;
+
+  /* Liquid Glass */
+  --krt-glass-bg: rgba(255, 255, 255, .08);
+  --krt-glass-bg-strong: rgba(255, 255, 255, .14);
+  --krt-glass-border: rgba(255, 255, 255, .20);
+  --krt-glass-highlight: rgba(255, 255, 255, .60);
+  --krt-glass-blur: 24px;
+  --krt-glass-saturate: 165%;
+  --krt-glass-shadow: 0 10px 40px rgba(0, 0, 0, .50);
+
+  /* Fondo */
+  --krt-grid-line: rgba(255, 253, 247, .055);
+  --krt-gradient-aurora:
+    radial-gradient(60% 75% at 10% 0%, rgba(222, 53, 41, .30) 0%, transparent 62%),
+    radial-gradient(50% 60% at 90% 10%, rgba(255, 210, 74, .20) 0%, transparent 65%),
+    radial-gradient(45% 60% at 60% 100%, rgba(201, 190, 216, .12) 0%, transparent 70%);
+  --krt-gradient-hero:
+    linear-gradient(180deg, rgba(13, 12, 15, .25) 0%, rgba(13, 12, 15, .94) 100%);
+  --krt-gradient-sheen:
+    linear-gradient(115deg, transparent 20%, rgba(255, 255, 255, .16) 50%, transparent 80%);
+
+  /* Tipografía */
+  --krt-font-display: "Anton", Impact, sans-serif;
+  --krt-font-body: "Inter", system-ui, -apple-system, sans-serif;
+  --krt-font-jp: "Noto Sans JP", sans-serif;
+
+  --krt-text-display: clamp(3rem, 8vw, 6rem);
+  --krt-text-h1: clamp(2.5rem, 6vw, 4.5rem);
+  --krt-text-h2: clamp(2rem, 4vw, 3rem);
+  --krt-text-h3: 1.5rem;
+  --krt-text-body-lg: 1.125rem;
+  --krt-text-body: 1rem;
+  --krt-text-sm: 0.875rem;
+  --krt-text-xs: 0.75rem;
+
+  /* Espaciado */
+  --krt-space-1: 4px;
+  --krt-space-2: 8px;
+  --krt-space-3: 12px;
+  --krt-space-4: 16px;
+  --krt-space-5: 24px;
+  --krt-space-6: 32px;
+  --krt-space-7: 48px;
+  --krt-space-8: 64px;
+  --krt-space-9: 96px;
+  --krt-space-10: 128px;
+
+  /* Radios */
+  --krt-radius-sm: 4px;
+  --krt-radius-md: 8px;
+  --krt-radius-lg: 12px;
+  --krt-radius-xl: 24px;
+  --krt-radius-full: 999px;
+
+  /* Sombras */
+  --krt-shadow-card: 0 8px 24px rgba(0, 0, 0, .35);
+  --krt-shadow-elevated: 0 16px 48px rgba(0, 0, 0, .50);
+  --krt-shadow-focus: 0 0 0 3px rgba(255, 210, 74, .50);
+
+  /* Movimiento */
+  --krt-duration-fast: 150ms;
+  --krt-duration-base: 250ms;
+  --krt-duration-slow: 400ms;
+  --krt-ease: cubic-bezier(.2, .8, .2, 1);
+
+  /* Capas */
+  --krt-z-base: 0;
+  --krt-z-dropdown: 10;
+  --krt-z-sticky: 100;
+  --krt-z-header: 200;
+  --krt-z-overlay: 300;
+  --krt-z-modal: 400;
+  --krt-z-toast: 500;
+
+  /* Layout */
+  --krt-header-height: 72px;
+  --krt-container: 1200px;
+}

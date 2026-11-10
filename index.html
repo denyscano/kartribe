@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0D0C0F">
+  <title>Kartribe · Tu tribu. Tu pista.</title>
+  <meta name="description" content="Kartribe — karting indoor, cronometraje real y una tribu que no frena. Tu tribu. Tu pista.">
+
+  <link rel="icon" href="./assets/img/favicon.svg" type="image/svg+xml">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Inter:wght@400;500;600;700&family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+
+  <!-- Orden obligatorio: tokens → base → layout → components → secciones -->
+  <link rel="stylesheet" href="./assets/css/tokens.css">
+  <link rel="stylesheet" href="./assets/css/base.css">
+  <link rel="stylesheet" href="./assets/css/layout.css">
+  <link rel="stylesheet" href="./assets/css/components.css">
+  <link rel="stylesheet" href="./assets/css/sections/header.css">
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Saltar al contenido</a>
+
+  <!-- ============================================================
+       FONDO DECORATIVO
+       Aurora + malla shoji + kanji + ensō. Nunca interactivo.
+       ============================================================ -->
+  <div class="site-bg" aria-hidden="true">
+    <div class="site-bg__aurora"></div>
+    <div class="site-bg__grid"></div>
+    <div class="site-bg__kanji" lang="ja">走</div>
+    <div class="site-bg__enso"></div>
+  </div>
+
+  <!-- ============================================================
+       HEADER + NAVEGACIÓN
+       Los enlaces apuntan a los IDs reservados de las secciones.
+       ============================================================ -->
+  <header class="site-header" id="inicio" data-site-header>
+    <div class="site-header__surface" aria-hidden="true"></div>
+
+    <div class="site-header__inner">
+      <div class="site-header__brand">
+        <a class="brand" href="#inicio" aria-label="Kartribe — ir al inicio">
+          <span class="brand__name">KARTRIBE<span class="brand__dot">.</span></span>
+        </a>
+        <span class="site-header__tagline" aria-hidden="true">Karting indoor · 3 circuitos</span>
+      </div>
+
+      <nav class="site-nav" id="site-menu" aria-label="Navegación principal" data-site-nav>
+        <ul class="site-nav__list">
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="#experiencias">
+              <span class="site-nav__key" aria-hidden="true">E</span>
+              <span class="site-nav__label">Experiencias</span>
+              <span class="site-nav__arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="#precios">
+              <span class="site-nav__key" aria-hidden="true">P</span>
+              <span class="site-nav__label">Precios</span>
+              <span class="site-nav__arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="#galeria">
+              <span class="site-nav__key" aria-hidden="true">G</span>
+              <span class="site-nav__label">Galería</span>
+              <span class="site-nav__arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="#opiniones">
+              <span class="site-nav__key" aria-hidden="true">O</span>
+              <span class="site-nav__label">Opiniones</span>
+              <span class="site-nav__arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="#faq">
+              <span class="site-nav__key" aria-hidden="true">F</span>
+              <span class="site-nav__label">FAQ</span>
+              <span class="site-nav__arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+          <li class="site-nav__item">
+            <a class="site-nav__link" href="#contacto">
+              <span class="site-nav__key" aria-hidden="true">C</span>
+              <span class="site-nav__label">Contacto</span>
+              <span class="site-nav__arrow" aria-hidden="true">→</span>
+            </a>
+          </li>
+        </ul>
+
+        <a class="btn btn--primary btn--sm site-nav__cta" href="#reserva">Reservar</a>
+
+        <p class="site-nav__tagline" aria-hidden="true">Tu tribu.<br><span>Tu pista.</span></p>
+      </nav>
+
+      <button class="site-header__toggle" type="button" aria-expanded="false" aria-controls="site-menu" aria-label="Abrir menú" data-menu-toggle>
+        <span class="site-header__toggle-box" aria-hidden="true">
+          <span class="site-header__toggle-bar"></span>
+          <span class="site-header__toggle-bar"></span>
+          <span class="site-header__toggle-bar"></span>
+        </span>
+      </button>
+    </div>
+
+    <div class="site-menu-overlay" aria-hidden="true" data-menu-overlay></div>
+  </header>
+
+  <!--============================================================
+       CONTENIDO
+       El cascarón está vacío a propósito. Añade aquí las secciones
+       en este orden, cada una con su id reservado y su CSS propio:
+
+       1. Hero              → id="hero"          → sections/hero.css
+       2. Experiencias      → id="experiencias"  → sections/experiences.css
+       3. Precios           → id="precios"       → sections/pricing.css
+       4. Galería           → id="galeria"       → sections/gallery.css
+       5. Opiniones         → id="opiniones"     → sections/testimonials.css
+       6. FAQ               → id="faq"           → sections/faq.css
+       7. Contacto          → id="contacto"      → sections/contact.css
+       8. Reserva / CTA     → id="reserva"       → sections/booking.css
+
+       Plantilla de sección:
+
+       <section class="section" id="experiencias" aria-labelledby="experiencias-title">
+         <div class="container">
+           <header class="section__header">
+             <p class="section__eyebrow">
+               <span class="section__eyebrow-jp" lang="ja" aria-hidden="true">速</span>
+               Experiencias
+             </p>
+             <h2 class="section__title" id="experiencias-title">Título de la sección</h2>
+             <p class="section__lead">Texto de apoyo breve.</p>
+           </header>
+
+           contenido de la sección -->
+  </div>
+  </section>
+  <!-- ============================================================ -->
+  <main class="site-main" id="main" tabindex="-1">
+  </main>
+
+  <script type="module" src="./assets/js/main.js"></script>
+</body>
+
+</html>
