@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="./assets/css/layout.css">
   <link rel="stylesheet" href="./assets/css/components.css">
   <link rel="stylesheet" href="./assets/css/sections/header.css">
+  <link rel="stylesheet" href="./assets/css/sections/hero.css">
 </head>
 
 <body>
@@ -146,6 +147,54 @@
   </section>
   <!-- ============================================================ -->
   <main class="site-main" id="main" tabindex="-1">
+    <section class="hero" id="hero" aria-labelledby="hero-title">
+      <div class="container hero__layout">
+        <div class="hero__content">
+          <p class="hero__eyebrow"><span lang="ja" aria-hidden="true">走</span> Karting indoor · 3 circuitos</p>
+          <h1 class="hero__title" id="hero-title">TU TRIBU.<br><span>TU PISTA.</span></h1>
+          <p class="hero__lead">Velocidad real. Sin carné. Elige tu circuito y sal a por tu mejor vuelta.</p>
+          <div class="hero__actions">
+            <a class="btn btn--primary btn--lg" href="#reserva">Reservar ahora</a>
+            <a class="btn btn--secondary btn--lg" href="#experiencias">Ver experiencias</a>
+          </div>
+        </div>
+
+        <div class="hero__track-slider" data-track-slider role="region" aria-roledescription="carrusel" aria-label="Circuitos de Kartribe" tabindex="0">
+          <div class="hero__track-slides" aria-live="polite">
+            <article class="hero__track-slide is-active" data-track-slide aria-label="Circuito 1 de 3">
+              <div class="hero__track-image" role="img" aria-label="Piloto de karting con casco en el circuito"></div>
+              <div class="hero__track-shade"></div>
+              <div class="hero__track-info"><p class="hero__track-kicker">Circuito <span>01</span></p><h2 class="hero__track-name">La primera vuelta</h2><p class="hero__track-copy">Encuentra tu trazada. Marca tu ritmo.</p></div>
+              <svg class="hero__track-map" viewBox="0 0 180 110" aria-hidden="true"><path d="M18 75c0-24 19-43 43-43h23c16 0 16 21 0 21H61c-13 0-13 20 0 20h69c23 0 23-35 0-35h-8c-19 0-19 37 0 37h25"/></svg>
+            </article>
+            <article class="hero__track-slide" data-track-slide aria-label="Circuito 2 de 3" hidden>
+              <div class="hero__track-image" role="img" aria-label="Piloto de karting con casco en el circuito"></div>
+              <div class="hero__track-shade"></div>
+              <div class="hero__track-info"><p class="hero__track-kicker">Circuito <span>02</span></p><h2 class="hero__track-name">Busca el interior</h2><p class="hero__track-copy">Cada curva cuenta. Cada segundo también.</p></div>
+              <svg class="hero__track-map" viewBox="0 0 180 110" aria-hidden="true"><path d="M20 83V47c0-18 28-18 28 0v17c0 18 27 18 27 0V37c0-18 30-18 30 0v40c0 14 24 14 24 0V55c0-17 30-17 30 0v28"/></svg>
+            </article>
+            <article class="hero__track-slide" data-track-slide aria-label="Circuito 3 de 3" hidden>
+              <div class="hero__track-image" role="img" aria-label="Piloto de karting con casco en el circuito"></div>
+              <div class="hero__track-shade"></div>
+              <div class="hero__track-info"><p class="hero__track-kicker">Circuito <span>03</span></p><h2 class="hero__track-name">A fondo hasta meta</h2><p class="hero__track-copy">Reta a tu tribu y baja tu mejor tiempo.</p></div>
+              <svg class="hero__track-map" viewBox="0 0 180 110" aria-hidden="true"><path d="M22 78c0-20 15-33 34-33h9c18 0 18-24 0-24H39c-23 0-23 34 0 34h94c18 0 18 25 0 25h-8c-20 0-20-31 0-31h32"/></svg>
+            </article>
+          </div>
+          <div class="hero__slider-controls">
+            <div class="hero__slider-pagination" role="group" aria-label="Elige un circuito">
+              <button class="hero__slider-dot is-active" type="button" aria-label="Ver circuito 1" aria-current="true" data-track-go="0"></button>
+              <button class="hero__slider-dot" type="button" aria-label="Ver circuito 2" data-track-go="1"></button>
+              <button class="hero__slider-dot" type="button" aria-label="Ver circuito 3" data-track-go="2"></button>
+            </div>
+            <span class="hero__slider-count"><span data-track-current>01</span> / 03</span>
+            <div class="hero__slider-arrows">
+              <button class="hero__slider-arrow" type="button" aria-label="Circuito anterior" data-track-prev>←</button>
+              <button class="hero__slider-arrow" type="button" aria-label="Circuito siguiente" data-track-next>→</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
   </main>
 
   <script type="module" src="./assets/js/main.js"></script>
