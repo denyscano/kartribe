@@ -20,6 +20,7 @@
   <link rel="stylesheet" href="./assets/css/layout.css">
   <link rel="stylesheet" href="./assets/css/components.css">
   <link rel="stylesheet" href="./assets/css/sections/header.css">
+  <link rel="stylesheet" href="./assets/css/sections/galeria.css">
 </head>
 
 <body>
@@ -146,9 +147,133 @@
   </section>
   <!-- ============================================================ -->
   <main class="site-main" id="main" tabindex="-1">
+
+    <!-- ============================================================
+         GALERÍA · id="galeria"
+         CSS: sections/galeria.css · JS: modules/galeria.js
+         Va después de Hero / Experiencias / Precios y antes de Opiniones.
+         ============================================================ -->
+    <section class="section" id="galeria" aria-labelledby="galeria-title">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow">
+            <span class="section__eyebrow-jp" lang="ja" aria-hidden="true">風</span>
+            Galería
+          </p>
+          <h2 class="section__title" id="galeria-title">Así se vive la pista</h2>
+          <p class="section__lead">Parrilla, rampas, horquillas y recta de meta. Elige dónde vas a adelantar.</p>
+        </header>
+
+        <div class="galeria" role="group" aria-roledescription="carrusel" aria-label="Fotos de los circuitos" data-galeria>
+          <div class="galeria__stage">
+            <button class="galeria__arrow galeria__arrow--prev" type="button" aria-label="Fotos anteriores" data-galeria-prev hidden>
+              <svg class="galeria__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <path d="M15 18l-6-6 6-6" />
+              </svg>
+            </button>
+
+            <div class="galeria__viewport" tabindex="0" aria-label="Fotos: desliza o usa las flechas del teclado" data-galeria-viewport>
+              <ul class="galeria__track">
+                <li class="galeria__slide" data-galeria-slide>
+                  <figure class="galeria__figure">
+                    <div class="galeria__media">
+                      <img class="galeria__img" src="./assets/img/galeria/parrilla-salida-karts-indoor.jpg" alt="Parrilla de salida de un circuito de karting cubierto con una fila de karts negros, rojos y azules en sus casillas numeradas." width="1000" height="667" loading="lazy" decoding="async">
+                    </div>
+                    <figcaption class="galeria__caption"><span class="galeria__number" aria-hidden="true">01</span>La parrilla, lista para tu tanda.</figcaption>
+                  </figure>
+                </li>
+                <li class="galeria__slide" data-galeria-slide>
+                  <figure class="galeria__figure">
+                    <div class="galeria__media">
+                      <img class="galeria__img" src="./assets/img/galeria/curva-principal-circuito-indoor.jpg" alt="Curva amplia de un circuito de karting cubierto, con pianos rojos y blancos y la zona de karts al fondo." width="1000" height="667" loading="lazy" decoding="async">
+                    </div>
+                    <figcaption class="galeria__caption"><span class="galeria__number" aria-hidden="true">02</span>Curva principal: frena tarde, sal rápido.</figcaption>
+                  </figure>
+                </li>
+                <li class="galeria__slide" data-galeria-slide>
+                  <figure class="galeria__figure">
+                    <div class="galeria__media">
+                      <img class="galeria__img" src="./assets/img/galeria/entrada-recepcion-circuito.jpg" alt="Entrada al circuito bajo un arco iluminado en azul, con el mostrador de recepción, pantallas con la hora y una alfombra estampada." width="1000" height="667" loading="lazy" decoding="async">
+                    </div>
+                    <figcaption class="galeria__caption"><span class="galeria__number" aria-hidden="true">03</span>La entrada. Aquí empieza todo.</figcaption>
+                  </figure>
+                </li>
+                <li class="galeria__slide" data-galeria-slide>
+                  <figure class="galeria__figure">
+                    <div class="galeria__media">
+                      <img class="galeria__img" src="./assets/img/galeria/rampa-subida-segundo-nivel.jpg" alt="Rampa de asfalto que sube al segundo nivel de un circuito cubierto, entre barreras y una estructura metálica azul." width="1000" height="667" loading="lazy" decoding="async">
+                    </div>
+                    <figcaption class="galeria__caption"><span class="galeria__number" aria-hidden="true">04</span>Rampa al segundo nivel. Sin levantar el pie.</figcaption>
+                  </figure>
+                </li>
+                <li class="galeria__slide" data-galeria-slide>
+                  <figure class="galeria__figure">
+                    <div class="galeria__media">
+                      <img class="galeria__img" src="./assets/img/galeria/horquilla-junto-a-rampa.jpg" alt="Curva de horquilla con pianos naranjas y blancos junto a la rampa que sube al nivel superior del circuito." width="1000" height="667" loading="lazy" decoding="async">
+                    </div>
+                    <figcaption class="galeria__caption"><span class="galeria__number" aria-hidden="true">05</span>Horquilla al pie de la rampa.</figcaption>
+                  </figure>
+                </li>
+                <li class="galeria__slide" data-galeria-slide>
+                  <figure class="galeria__figure">
+                    <div class="galeria__media">
+                      <img class="galeria__img" src="./assets/img/galeria/circuito-indoor-dos-alturas.jpg" alt="Vista general de un circuito cubierto de dos alturas, con el trazado elevado sobre una estructura azul y la pista inferior en curva." width="1000" height="667" loading="lazy" decoding="async">
+                    </div>
+                    <figcaption class="galeria__caption"><span class="galeria__number" aria-hidden="true">06</span>Un circuito, dos alturas.</figcaption>
+                  </figure>
+                </li>
+                <li class="galeria__slide" data-galeria-slide>
+                  <figure class="galeria__figure">
+                    <div class="galeria__media">
+                      <img class="galeria__img" src="./assets/img/galeria/recta-de-meta.jpg" alt="Recta de meta con la línea a cuadros pintada en el asfalto y la zona de karts a la derecha." width="1000" height="667" loading="lazy" decoding="async">
+                    </div>
+                    <figcaption class="galeria__caption"><span class="galeria__number" aria-hidden="true">07</span>Recta de meta. Aquí se gana.</figcaption>
+                  </figure>
+                </li>
+                <li class="galeria__slide" data-galeria-slide>
+                  <figure class="galeria__figure">
+                    <div class="galeria__media">
+                      <img class="galeria__img" src="./assets/img/galeria/circuito-exterior-vista-aerea.jpg" alt="Vista aérea de un circuito de karting al aire libre con curvas enlazadas, delimitado por neumáticos rojos, blancos y verdes." width="1000" height="667" loading="lazy" decoding="async">
+                    </div>
+                    <figcaption class="galeria__caption"><span class="galeria__number" aria-hidden="true">08</span>Circuito exterior, visto desde el aire.</figcaption>
+                  </figure>
+                </li>
+                <li class="galeria__slide" data-galeria-slide>
+                  <figure class="galeria__figure">
+                    <div class="galeria__media">
+                      <img class="galeria__img" src="./assets/img/galeria/pilotos-con-casco-en-parrilla.jpg" alt="Pilotos con casco sentados en sus karts, en fila en la parrilla de un circuito exterior, vistos desde atrás." width="1000" height="667" loading="lazy" decoding="async">
+                    </div>
+                    <figcaption class="galeria__caption"><span class="galeria__number" aria-hidden="true">09</span>Casco puesto y a esperar la salida.</figcaption>
+                  </figure>
+                </li>
+                <li class="galeria__slide" data-galeria-slide>
+                  <figure class="galeria__figure">
+                    <div class="galeria__media">
+                      <img class="galeria__img" src="./assets/img/galeria/carrera-grupo-con-monitor.jpg" alt="Grupo de pilotos con camiseta azul saliendo en sus karts mientras un monitor con chaleco reflectante vigila la pista y el público mira desde la grada." width="1000" height="667" loading="lazy" decoding="async">
+                    </div>
+                    <figcaption class="galeria__caption"><span class="galeria__number" aria-hidden="true">10</span>Carrera de grupo con monitor en pista.</figcaption>
+                  </figure>
+                </li>
+              </ul>
+            </div>
+
+            <button class="galeria__arrow galeria__arrow--next" type="button" aria-label="Fotos siguientes" data-galeria-next hidden>
+              <svg class="galeria__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true" focusable="false">
+                <path d="M9 18l6-6-6-6" />
+              </svg>
+            </button>
+          </div>
+
+          <div class="galeria__dots" data-galeria-dots hidden></div>
+          <p class="u-visually-hidden" aria-live="polite" data-galeria-status></p>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <script type="module" src="./assets/js/main.js"></script>
+  <script type="module" src="./assets/js/modules/galeria.js"></script>
 </body>
 
 </html>
