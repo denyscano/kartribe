@@ -1,0 +1,127 @@
+/* ============================================================
+   KARTRIBE · EXPERIENCIAS Y PRECIOS
+   ============================================================ */
+
+.experiences__header {
+  max-width: 720px;
+}
+
+.experiences__grid {
+  display: grid;
+  gap: var(--krt-space-5);
+  scroll-margin-top: calc(var(--krt-header-offset) + var(--krt-header-height) + var(--krt-space-5));
+}
+
+.experience-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 440px;
+  padding: clamp(24px, 4vw, 32px);
+  border-radius: var(--krt-radius-lg);
+}
+
+.experience-card--grand {
+  border-color: var(--krt-color-primary);
+}
+
+.experience-card--mini {
+  border-color: var(--krt-color-accent);
+}
+
+.experience-card__eyebrow {
+  margin-bottom: var(--krt-space-3);
+  color: var(--krt-color-text-muted);
+  font-size: var(--krt-text-xs);
+  font-weight: 700;
+  letter-spacing: 0.16em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.experience-card__title {
+  margin-bottom: var(--krt-space-3);
+  color: var(--krt-color-primary-bright);
+  font-size: clamp(1.75rem, 4vw, 2.25rem);
+}
+
+.experience-card--mini .experience-card__title {
+  color: var(--krt-color-accent-strong);
+}
+
+.experience-card__title span {
+  color: var(--krt-color-text-muted);
+  font-family: var(--krt-font-body);
+  font-size: 0.5em;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.experience-card__schedule {
+  color: var(--krt-color-text);
+  font-weight: 600;
+}
+
+.experience-card__details {
+  display: grid;
+  gap: var(--krt-space-2);
+  margin-block: 28px 20px;
+  padding-block: 20px;
+  border-block: 1px solid var(--krt-color-border);
+  color: var(--krt-color-text-muted);
+  font-size: var(--krt-text-sm);
+}
+
+.experience-card__details li {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--krt-space-4);
+}
+
+.experience-card__details strong {
+  color: var(--krt-color-text);
+  font-weight: 600;
+}
+
+.experience-card__price {
+  display: flex;
+  align-items: baseline;
+  gap: var(--krt-space-2);
+  color: var(--krt-color-primary-bright);
+  font-family: var(--krt-font-display);
+  font-size: clamp(2.5rem, 6vw, 3rem);
+  line-height: 1;
+}
+
+.experience-card--mini .experience-card__price {
+  color: var(--krt-color-accent-strong);
+}
+
+.experience-card__price span {
+  color: var(--krt-color-text-muted);
+  font-family: var(--krt-font-body);
+  font-size: var(--krt-text-xs);
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+.experience-card__contact {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--krt-color-border);
+  color: var(--krt-color-text-muted);
+  font-size: var(--krt-text-xs);
+  text-align: center;
+}
+
+.experience-card__action {
+  width: 100%;
+  margin-top: 20px;
+}
+
+@media (min-width: 768px) {
+  .experiences__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}

@@ -1,0 +1,104 @@
+/* ============================================================
+   KARTRIBE · OPCIONES DE KART
+   ============================================================ */
+
+.options__header {
+  max-width: 720px;
+}
+
+.options__grid {
+  display: grid;
+  gap: var(--krt-space-5);
+}
+
+.option-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 520px;
+  overflow: hidden;
+  padding: 0;
+}
+
+.option-card--kids { border-color: #66BFFF; }
+.option-card--duo { border-color: var(--krt-color-accent); }
+.option-card--adult { border-color: var(--krt-color-primary); }
+
+.option-card__visual {
+  display: grid;
+  min-height: 100px;
+  place-items: center;
+  border-bottom: 1px solid var(--krt-color-border);
+  font-family: var(--krt-font-display);
+  font-size: clamp(2.5rem, 6vw, 3.25rem);
+  line-height: 1;
+}
+
+.option-card--kids .option-card__visual { color: #66BFFF; }
+.option-card--duo .option-card__visual { color: var(--krt-color-accent); }
+.option-card--adult .option-card__visual { color: var(--krt-color-primary-bright); }
+
+.option-card__body {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 24px;
+}
+
+.option-card__eyebrow {
+  margin-bottom: var(--krt-space-2);
+  color: var(--krt-color-accent);
+  font-size: var(--krt-text-xs);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.option-card__title {
+  margin-bottom: 20px;
+  font-size: clamp(1.45rem, 3vw, 1.8rem);
+}
+
+.option-card__description {
+  color: var(--krt-color-text-muted);
+  font-size: var(--krt-text-sm);
+  line-height: 1.55;
+}
+
+.option-card__requirements {
+  margin-top: 20px;
+  padding-top: 16px;
+  border-top: 1px solid var(--krt-color-border);
+  color: var(--krt-color-text-muted);
+  font-size: var(--krt-text-sm);
+}
+
+.option-card__requirements h4 {
+  margin-bottom: 6px;
+  font-family: var(--krt-font-body);
+  font-size: var(--krt-text-sm);
+  font-weight: 700;
+  line-height: 1.4;
+  text-transform: none;
+}
+
+.option-card__requirements li::before {
+  content: "·";
+  margin-right: 6px;
+  color: var(--krt-color-accent);
+}
+
+.option-card__capacity {
+  margin-top: auto;
+  padding-top: 24px;
+  color: var(--krt-color-text);
+  font-size: var(--krt-text-sm);
+  font-weight: 700;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .options__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
