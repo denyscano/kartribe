@@ -45,7 +45,7 @@
 
 .section {
   position: relative;
-  padding-block: clamp(64px, 9vw, 112px);
+  padding-block: clamp(64px, 10vw, 128px);
 }
 
 .section--tinted {
@@ -54,7 +54,7 @@
 }
 
 .section__header {
-  max-width: 660px;
+  max-width: 720px;
   margin-bottom: clamp(32px, 5vw, 56px);
 }
 

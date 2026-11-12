@@ -19,7 +19,7 @@
   padding: 0;
 }
 
-.option-card--kids { border-color: #66BFFF; }
+.option-card--kids { border-color: var(--krt-color-border); }
 .option-card--duo { border-color: var(--krt-color-accent); }
 .option-card--adult { border-color: var(--krt-color-primary); }
 
@@ -33,7 +33,7 @@
   line-height: 1;
 }
 
-.option-card--kids .option-card__visual { color: #66BFFF; }
+.option-card--kids .option-card__visual { color: var(--krt-color-text-muted); }
 .option-card--duo .option-card__visual { color: var(--krt-color-accent); }
 .option-card--adult .option-card__visual { color: var(--krt-color-primary-bright); }
 
@@ -41,7 +41,7 @@
   display: flex;
   flex: 1;
   flex-direction: column;
-  padding: 24px;
+  padding: var(--krt-space-5);
 }
 
 .option-card__eyebrow {
@@ -55,7 +55,7 @@
 }
 
 .option-card__title {
-  margin-bottom: 20px;
+  margin-bottom: var(--krt-space-4);
   font-size: clamp(1.45rem, 3vw, 1.8rem);
 }
 
@@ -66,8 +66,8 @@
 }
 
 .option-card__requirements {
-  margin-top: 20px;
-  padding-top: 16px;
+  margin-top: var(--krt-space-4);
+  padding-top: var(--krt-space-4);
   border-top: 1px solid var(--krt-color-border);
   color: var(--krt-color-text-muted);
   font-size: var(--krt-text-sm);
@@ -84,13 +84,13 @@
 
 .option-card__requirements li::before {
   content: "·";
-  margin-right: 6px;
+  margin-right: var(--krt-space-1);
   color: var(--krt-color-accent);
 }
 
 .option-card__capacity {
   margin-top: auto;
-  padding-top: 24px;
+  padding-top: var(--krt-space-5);
   color: var(--krt-color-text);
   font-size: var(--krt-text-sm);
   font-weight: 700;
