@@ -365,6 +365,82 @@
       </div>
     </section>
 
+    <!-- ============================================================
+         CONTACTO · id="contacto"
+         TODO: conectar el formulario y sustituir los datos pendientes
+         antes de publicar.
+         ============================================================ -->
+    <section class="section section--tinted" id="contacto" aria-labelledby="contacto-title">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow">
+            <span class="section__eyebrow-jp" lang="ja" aria-hidden="true">話</span>
+            Contacto
+          </p>
+          <h2 class="section__title" id="contacto-title">Hablemos de tu próxima carrera</h2>
+          <p class="section__lead">Cuéntanos qué necesitas. Te responderemos en cuanto confirmemos nuestro plazo habitual de respuesta.</p>
+        </header>
+
+        <div class="grid grid--2">
+          <form class="stack" method="post">
+            <div class="grid grid--2">
+              <div class="field">
+                <label class="field__label" for="contacto-nombre">Nombre</label>
+                <input class="field__input" id="contacto-nombre" name="nombre" type="text" autocomplete="name" required>
+              </div>
+              <div class="field">
+                <label class="field__label" for="contacto-email">Correo electrónico</label>
+                <input class="field__input" id="contacto-email" name="email" type="email" autocomplete="email" required>
+              </div>
+            </div>
+
+            <div class="field">
+              <label class="field__label" for="contacto-mensaje">Mensaje</label>
+              <textarea class="field__textarea" id="contacto-mensaje" name="mensaje" rows="5" required></textarea>
+            </div>
+
+            <div class="field">
+              <label for="contacto-privacidad">
+                <input id="contacto-privacidad" name="privacidad" type="checkbox" required>
+                He leído y acepto la <a href="#politica-privacidad">política de privacidad</a>.
+              </label>
+              <p class="field__hint" id="politica-privacidad">
+                <!-- TODO: publicar y validar legalmente el aviso de privacidad antes de activar el formulario. -->
+                Aviso de privacidad pendiente de publicación.
+              </p>
+            </div>
+
+            <button class="btn btn--primary" type="submit">Enviar mensaje</button>
+          </form>
+
+          <aside class="stack" aria-label="Información de contacto y recursos">
+            <div>
+              <h3>Información directa</h3>
+              <address>
+                <p>Correo corporativo: kartribe@gmail.com</p>
+                <p>Teléfono: 633112233</p>
+                <p>Dirección: Calle Sevilla Morante 123</p>
+              </address>
+              <!-- TODO: sustituir los datos pendientes por información corporativa confirmada. -->
+            </div>
+
+            <div>
+              <h3>Tiempo de respuesta</h3>
+              <p>Plazo habitual de 1-7 dias.</p>
+            </div>
+
+            <div>
+              <h3>Más recursos</h3>
+              <ul>
+                <li><a href="#faq">Preguntas frecuentes</a></li>
+              </ul>
+              <!-- TODO: enlazar el FAQ cuando se publique y añadir ayuda o redes sociales oficiales. -->
+            </div>
+          </aside>
+        </div>
+      </div>
+    </section>
+
   </main>
 
   <script type="module" src="./assets/js/main.js"></script>
