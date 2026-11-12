@@ -1,0 +1,54 @@
+/* ============================================================
+   KARTRIBE · CONTACTO
+   ============================================================ */
+
+.contact__layout {
+  align-items: start;
+}
+
+.contact__form {
+  gap: var(--krt-space-5);
+}
+
+.contact__aside {
+  display: grid;
+  align-content: start;
+  gap: var(--krt-space-5);
+  padding: var(--krt-space-5);
+}
+
+.contact__block + .contact__block {
+  padding-top: var(--krt-space-5);
+  border-top: 1px solid var(--krt-color-border);
+}
+
+.contact__block h3 {
+  margin-bottom: var(--krt-space-2);
+  color: var(--krt-color-accent);
+}
+
+.contact__address {
+  color: var(--krt-color-text-muted);
+  font-style: normal;
+}
+
+.contact__address p + p {
+  margin-top: var(--krt-space-2);
+}
+
+.contact__block ul {
+  margin: 0;
+  padding-left: var(--krt-space-5);
+}
+
+.contact__block a {
+  color: var(--krt-color-text);
+  text-decoration-color: var(--krt-color-primary-bright);
+  text-underline-offset: var(--krt-space-1);
+}
+
+@media (min-width: 768px) {
+  .contact__layout {
+    grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  }
+}

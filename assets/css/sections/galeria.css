@@ -1,0 +1,245 @@
+/* ============================================================
+   KARTRIBE · GALERÍA (#galeria)
+   Carrusel con scroll-snap nativo (deslizar en móvil) + flechas,
+   puntos y teclado gestionados por assets/js/modules/galeria.js.
+   Fotos visibles: 1 móvil · 2 tablet (≥768) · 3 desktop (≥1024).
+   El JS lee --galeria-per-view, así que el número vive solo aquí.
+   ============================================================ */
+
+.galeria {
+  --galeria-per-view: 1;
+  --galeria-gap: var(--krt-space-4);
+
+  position: relative;
+}
+
+/* ---------- Escenario: viewport + flechas ---------- */
+
+.galeria__stage {
+  position: relative;
+}
+
+.galeria__viewport {
+  border-radius: var(--krt-radius-lg);
+  overflow-x: auto;
+  overflow-y: hidden;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  -webkit-overflow-scrolling: touch;
+}
+
+.galeria__viewport::-webkit-scrollbar {
+  display: none;
+}
+
+.galeria__viewport:focus-visible {
+  outline: 2px solid var(--krt-color-accent);
+  outline-offset: 3px;
+}
+
+.galeria__track {
+  display: flex;
+  gap: var(--galeria-gap);
+}
+
+.galeria__slide {
+  flex: 0 0 calc((100% - (var(--galeria-per-view) - 1) * var(--galeria-gap)) / var(--galeria-per-view));
+  min-width: 0;
+  scroll-snap-align: start;
+}
+
+/* ---------- Tarjeta de foto ---------- */
+
+.galeria__figure {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  overflow: hidden;
+  border: 1px solid var(--krt-color-border);
+  border-radius: var(--krt-radius-lg);
+  background-color: var(--krt-color-surface);
+  transition: border-color var(--krt-duration-base) var(--krt-ease);
+}
+
+.galeria__figure:hover {
+  border-color: var(--krt-color-accent-strong);
+}
+
+.galeria__media {
+  overflow: hidden;
+  aspect-ratio: 16 / 10;
+  background-color: var(--krt-color-surface-alt);
+}
+
+.galeria__img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform var(--krt-duration-slow) var(--krt-ease);
+}
+
+.galeria__figure:hover .galeria__img {
+  transform: scale(1.04);
+}
+
+.galeria__caption {
+  display: flex;
+  align-items: baseline;
+  gap: var(--krt-space-3);
+  padding: var(--krt-space-4) var(--krt-space-5);
+  color: var(--krt-color-text);
+  font-size: var(--krt-text-body-lg);
+  font-weight: 500;
+  line-height: 1.4;
+}
+
+.galeria__number {
+  flex: 0 0 auto;
+  color: var(--krt-color-accent);
+  font-size: var(--krt-text-xs);
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  letter-spacing: 0.18em;
+}
+
+/* ---------- Flechas ---------- */
+
+.galeria__arrow {
+  position: absolute;
+  top: 50%;
+  z-index: var(--krt-z-dropdown);
+  display: grid;
+  place-items: center;
+  width: 48px;
+  height: 48px;
+  border: 1px solid var(--krt-glass-border);
+  border-radius: var(--krt-radius-full);
+  background-image: linear-gradient(
+    135deg,
+    var(--krt-glass-bg-strong) 0%,
+    var(--krt-glass-bg) 45%,
+    var(--krt-glass-bg-strong) 100%
+  );
+  background-color: rgba(13, 12, 15, 0.55);
+  color: var(--krt-color-text);
+  -webkit-backdrop-filter: blur(16px) saturate(var(--krt-glass-saturate));
+  backdrop-filter: blur(16px) saturate(var(--krt-glass-saturate));
+  box-shadow:
+    inset 0 1px 0 var(--krt-glass-highlight),
+    var(--krt-glass-shadow);
+  transform: translateY(-50%);
+  transition:
+    border-color var(--krt-duration-fast) var(--krt-ease),
+    color var(--krt-duration-fast) var(--krt-ease),
+    opacity var(--krt-duration-fast) var(--krt-ease);
+}
+
+.galeria__arrow--prev {
+  left: var(--krt-space-3);
+}
+
+.galeria__arrow--next {
+  right: var(--krt-space-3);
+}
+
+.galeria__arrow:hover:not([aria-disabled="true"]) {
+  border-color: var(--krt-color-accent);
+  color: var(--krt-color-accent);
+}
+
+/* aria-disabled (no disabled) para no perder el foco al llegar al final */
+.galeria__arrow[aria-disabled="true"] {
+  opacity: 0.45;
+  cursor: not-allowed;
+}
+
+/* Sin JS no hay flechas ni puntos: solo scroll/deslizar nativo */
+.galeria__arrow[hidden],
+.galeria__dots[hidden] {
+  display: none;
+}
+
+.galeria__icon {
+  width: 20px;
+  height: 20px;
+}
+
+@supports not (backdrop-filter: blur(1px)) {
+  .galeria__arrow {
+    background-image: none;
+    background-color: var(--krt-color-surface);
+  }
+}
+
+/* ---------- Puntos ---------- */
+
+.galeria__dots {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-top: var(--krt-space-5);
+}
+
+.galeria__dot {
+  display: grid;
+  place-items: center;
+  width: 28px;
+  height: 28px;
+}
+
+.galeria__dot::before {
+  content: "";
+  width: 8px;
+  height: 8px;
+  border-radius: var(--krt-radius-full);
+  background-color: var(--krt-color-text-muted);
+  opacity: 0.6;
+  transition:
+    width var(--krt-duration-base) var(--krt-ease),
+    background-color var(--krt-duration-base) var(--krt-ease),
+    opacity var(--krt-duration-base) var(--krt-ease);
+}
+
+.galeria__dot:hover::before {
+  opacity: 1;
+}
+
+.galeria__dot.is-active::before {
+  width: 24px;
+  background-color: var(--krt-color-accent);
+  opacity: 1;
+}
+
+/* ---------- Responsive ---------- */
+
+@media (min-width: 768px) {
+  .galeria {
+    --galeria-per-view: 2;
+    --galeria-gap: var(--krt-space-5);
+  }
+
+  .galeria__dot {
+    width: 32px;
+    height: 32px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .galeria {
+    --galeria-per-view: 3;
+  }
+}
+
+/* ---------- Movimiento reducido ---------- */
+
+@media (prefers-reduced-motion: reduce) {
+  .galeria__viewport {
+    scroll-behavior: auto;
+  }
+
+  .galeria__figure:hover .galeria__img {
+    transform: none;
+  }
+}
