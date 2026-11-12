@@ -22,6 +22,7 @@
   <link rel="stylesheet" href="./assets/css/sections/header.css">
   <link rel="stylesheet" href="./assets/css/sections/hero.css">
   <link rel="stylesheet" href="./assets/css/sections/galeria.css">
+  <link rel="stylesheet" href="./assets/css/sections/footer.css">
   <style>
     #opiniones .opiniones__form {
       max-width: 720px;
@@ -123,16 +124,9 @@
       <nav class="site-nav" id="site-menu" aria-label="Navegación principal" data-site-nav>
         <ul class="site-nav__list">
           <li class="site-nav__item">
-            <a class="site-nav__link" href="#experiencias">
-              <span class="site-nav__key" aria-hidden="true">E</span>
-              <span class="site-nav__label">Experiencias</span>
-              <span class="site-nav__arrow" aria-hidden="true">→</span>
-            </a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="#precios">
-              <span class="site-nav__key" aria-hidden="true">P</span>
-              <span class="site-nav__label">Precios</span>
+            <a class="site-nav__link" href="#hero">
+              <span class="site-nav__key" aria-hidden="true">I</span>
+              <span class="site-nav__label">Inicio</span>
               <span class="site-nav__arrow" aria-hidden="true">→</span>
             </a>
           </li>
@@ -140,20 +134,6 @@
             <a class="site-nav__link" href="#galeria">
               <span class="site-nav__key" aria-hidden="true">G</span>
               <span class="site-nav__label">Galería</span>
-              <span class="site-nav__arrow" aria-hidden="true">→</span>
-            </a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="#opiniones">
-              <span class="site-nav__key" aria-hidden="true">O</span>
-              <span class="site-nav__label">Opiniones</span>
-              <span class="site-nav__arrow" aria-hidden="true">→</span>
-            </a>
-          </li>
-          <li class="site-nav__item">
-            <a class="site-nav__link" href="#faq">
-              <span class="site-nav__key" aria-hidden="true">F</span>
-              <span class="site-nav__label">FAQ</span>
               <span class="site-nav__arrow" aria-hidden="true">→</span>
             </a>
           </li>
@@ -166,7 +146,7 @@
           </li>
         </ul>
 
-        <a class="btn btn--primary btn--sm site-nav__cta" href="#reserva">Reservar</a>
+        <a class="btn btn--primary btn--sm site-nav__cta" href="#contacto">Reservar</a>
 
         <p class="site-nav__tagline" aria-hidden="true">Tu tribu.<br><span>Tu pista.</span></p>
       </nav>
@@ -222,7 +202,7 @@
           <h1 class="hero__title" id="hero-title">TU TRIBU.<br><span>TU PISTA.</span></h1>
           <p class="hero__lead">Velocidad real. Sin carné. Elige tu circuito y sal a por tu mejor vuelta.</p>
           <div class="hero__actions">
-            <a class="btn btn--primary btn--lg" href="#reserva">Reservar ahora</a>
+            <a class="btn btn--primary btn--lg" href="#contacto">Reservar ahora</a>
             <a class="btn btn--secondary btn--lg" href="#experiencias">Ver experiencias</a>
           </div>
         </div>
@@ -559,6 +539,47 @@
     </section>
 
   </main>
+
+  <footer class="site-footer" id="footer">
+    <div class="container site-footer__main">
+      <div class="site-footer__grid">
+        <div class="site-footer__brand-block">
+          <a class="brand site-footer__brand" href="#inicio" aria-label="Kartribe — ir al inicio">
+            <span class="brand__name">KARTRIBE<span class="brand__dot">.</span></span>
+          </a>
+          <p class="site-footer__tagline">Tu tribu.<br><span>Tu pista.</span></p>
+          <p class="site-footer__brand-copy">Karting indoor para venir con tu gente y buscar tu mejor vuelta.</p>
+        </div>
+
+        <nav class="site-footer__column" aria-label="Enlaces del sitio">
+          <h2 class="site-footer__heading">Explora</h2>
+          <ul class="site-footer__links">
+            <li><a class="site-footer__link" href="#hero">Inicio</a></li>
+            <li><a class="site-footer__link" href="#galeria">Galería</a></li>
+            <li><a class="site-footer__link" href="#contacto">Contacto</a></li>
+          </ul>
+        </nav>
+
+        <div class="site-footer__column">
+          <h2 class="site-footer__heading">Contacto</h2>
+          <p class="site-footer__text">¿Tienes una pregunta o quieres organizar una carrera?</p>
+          <a class="site-footer__link site-footer__contact-link" href="#contacto">Escribir al equipo <span aria-hidden="true">→</span></a>
+        </div>
+
+        <div class="site-footer__column">
+          <h2 class="site-footer__heading">Comunidad y legal</h2>
+          <p class="site-footer__text">Redes sociales<br><span class="site-footer__pending">Próximamente</span></p>
+          <!-- TODO: publicar el aviso de privacidad y añadir perfiles oficiales antes de lanzar. -->
+          <a class="site-footer__link" href="#politica-privacidad">Estado del aviso de privacidad</a>
+        </div>
+      </div>
+
+      <div class="site-footer__bottom">
+        <p>© <span id="year"></span> Kartribe</p>
+        <p class="site-footer__bottom-note">Tu tribu. Tu pista.</p>
+      </div>
+    </div>
+  </footer>
 
   <script type="module" src="./assets/js/main.js"></script>
   <script type="module" src="./assets/js/modules/galeria.js"></script>
