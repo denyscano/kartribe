@@ -23,6 +23,73 @@
   <link rel="stylesheet" href="./assets/css/sections/hero.css">
   <link rel="stylesheet" href="./assets/css/sections/galeria.css">
   <link rel="stylesheet" href="./assets/css/sections/footer.css">
+  <style>
+    #opiniones .opiniones__form {
+      max-width: 720px;
+    }
+
+    #opiniones .opiniones__rating {
+      display: flex;
+      flex-direction: row-reverse;
+      justify-content: flex-end;
+      width: max-content;
+      margin: 0;
+      padding: 0;
+      border: 0;
+    }
+
+    #opiniones .opiniones__star {
+      padding: 0 3px;
+      color: var(--krt-color-text-muted);
+      cursor: pointer;
+      font-size: 2rem;
+      line-height: 1;
+    }
+
+    #opiniones .opiniones__rating input:checked ~ label,
+    #opiniones .opiniones__rating label:hover,
+    #opiniones .opiniones__rating label:hover ~ label {
+      color: var(--krt-color-accent);
+    }
+
+    #opiniones .opiniones__rating input:focus-visible + label {
+      outline: 2px solid var(--krt-color-accent);
+      outline-offset: 3px;
+      border-radius: var(--krt-radius-sm);
+    }
+
+    #opiniones .opiniones__list {
+      display: grid;
+      gap: var(--krt-space-4);
+      max-width: 820px;
+      margin: var(--krt-space-6) 0 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    #opiniones .opiniones__item {
+      padding: var(--krt-space-4);
+      border: 1px solid var(--krt-color-border);
+      border-radius: var(--krt-radius-lg);
+      background: var(--krt-glass-bg);
+    }
+
+    #opiniones .opiniones__item-rating {
+      margin: 0 0 var(--krt-space-2);
+      color: var(--krt-color-accent);
+      letter-spacing: 0.12em;
+    }
+
+    #opiniones .opiniones__item-name {
+      margin: 0 0 var(--krt-space-2);
+    }
+
+    #opiniones .opiniones__item-text {
+      margin: 0;
+      color: var(--krt-color-text-muted);
+      white-space: pre-wrap;
+    }
+  </style>
 </head>
 
 <body>
@@ -346,6 +413,56 @@
     </section>
 
     <!-- ============================================================
+         OPINIONES · id="opiniones"
+         ============================================================ -->
+    <section class="section section--tinted" id="opiniones" aria-labelledby="opiniones-title">
+      <div class="container">
+        <header class="section__header">
+          <p class="section__eyebrow">
+            <span class="section__eyebrow-jp" lang="ja" aria-hidden="true">声</span>
+            Opiniones
+          </p>
+          <h2 class="section__title" id="opiniones-title">Cuéntanos cómo fue tu carrera</h2>
+          <p class="section__lead">Valora tu experiencia y comparte tu opinión con la tribu.</p>
+        </header>
+
+        <form class="stack opiniones__form" data-opiniones-form>
+          <div class="field">
+            <fieldset class="opiniones__rating">
+              <legend class="field__label">Valoración (de 1 a 5 estrellas)</legend>
+              <input class="u-visually-hidden" id="opinion-estrella-5" name="valoracion" type="radio" value="5" required>
+              <label class="opiniones__star" for="opinion-estrella-5" aria-label="5 estrellas"><span aria-hidden="true">★</span></label>
+              <input class="u-visually-hidden" id="opinion-estrella-4" name="valoracion" type="radio" value="4">
+              <label class="opiniones__star" for="opinion-estrella-4" aria-label="4 estrellas"><span aria-hidden="true">★</span></label>
+              <input class="u-visually-hidden" id="opinion-estrella-3" name="valoracion" type="radio" value="3">
+              <label class="opiniones__star" for="opinion-estrella-3" aria-label="3 estrellas"><span aria-hidden="true">★</span></label>
+              <input class="u-visually-hidden" id="opinion-estrella-2" name="valoracion" type="radio" value="2">
+              <label class="opiniones__star" for="opinion-estrella-2" aria-label="2 estrellas"><span aria-hidden="true">★</span></label>
+              <input class="u-visually-hidden" id="opinion-estrella-1" name="valoracion" type="radio" value="1">
+              <label class="opiniones__star" for="opinion-estrella-1" aria-label="1 estrella"><span aria-hidden="true">★</span></label>
+            </fieldset>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="opinion-nombre">Nombre</label>
+            <input class="field__input" id="opinion-nombre" name="nombre" type="text" autocomplete="name" maxlength="80" required>
+          </div>
+
+          <div class="field">
+            <label class="field__label" for="opinion-texto">Tu opinión</label>
+            <textarea class="field__textarea" id="opinion-texto" name="opinion" rows="4" maxlength="1000" required></textarea>
+          </div>
+
+          <button class="btn btn--primary" type="submit">Publicar opinión</button>
+          <p class="field__hint">La opinión aparecerá en esta página mientras permanezca abierta.</p>
+        </form>
+
+        <ul class="opiniones__list" aria-label="Opiniones compartidas" data-opiniones-list hidden></ul>
+        <p class="u-visually-hidden" aria-live="polite" data-opiniones-status></p>
+      </div>
+    </section>
+
+    <!-- ============================================================
          CONTACTO · id="contacto"
          TODO: conectar el formulario y sustituir los datos pendientes
          antes de publicar.
@@ -466,6 +583,47 @@
 
   <script type="module" src="./assets/js/main.js"></script>
   <script type="module" src="./assets/js/modules/galeria.js"></script>
+  <script type="module">
+    const form = document.querySelector("[data-opiniones-form]");
+    const list = document.querySelector("[data-opiniones-list]");
+    const status = document.querySelector("[data-opiniones-status]");
+
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+
+      const formData = new FormData(form);
+      const nombre = formData.get("nombre").trim();
+      const opinion = formData.get("opinion").trim();
+      const valoracion = Number(formData.get("valoracion"));
+
+      if (!nombre || !opinion) {
+        status.textContent = "Escribe tu nombre y tu opinión antes de publicar.";
+        return;
+      }
+
+      const item = document.createElement("li");
+      item.className = "opiniones__item";
+
+      const rating = document.createElement("p");
+      rating.className = "opiniones__item-rating";
+      rating.setAttribute("aria-label", `${valoracion} de 5 estrellas`);
+      rating.textContent = `${"★".repeat(valoracion)}${"☆".repeat(5 - valoracion)}`;
+
+      const author = document.createElement("h3");
+      author.className = "opiniones__item-name";
+      author.textContent = nombre;
+
+      const message = document.createElement("p");
+      message.className = "opiniones__item-text";
+      message.textContent = opinion;
+
+      item.append(rating, author, message);
+      list.prepend(item);
+      list.hidden = false;
+      form.reset();
+      status.textContent = "Tu opinión se ha publicado correctamente.";
+    });
+  </script>
 </body>
 
 </html>
