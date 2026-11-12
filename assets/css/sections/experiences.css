@@ -13,23 +13,29 @@
 }
 
 .experience-card {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-rows: auto auto auto minmax(var(--krt-space-10), 1fr) auto auto auto;
+  gap: var(--krt-space-2);
   min-height: 440px;
-  padding: clamp(24px, 4vw, 32px);
+  padding: var(--krt-space-5);
   border-radius: var(--krt-radius-lg);
+  transition:
+    border-color var(--krt-duration-base) var(--krt-ease),
+    transform var(--krt-duration-base) var(--krt-ease);
 }
 
-.experience-card--grand {
-  border-color: var(--krt-color-primary);
+.experience-card:hover {
+  border-color: var(--krt-color-accent-strong);
+  transform: translateY(-2px);
 }
 
+.experience-card--grand,
 .experience-card--mini {
-  border-color: var(--krt-color-accent);
+  border-color: var(--krt-glass-border);
 }
 
 .experience-card__eyebrow {
-  margin-bottom: var(--krt-space-3);
+  margin: 0;
   color: var(--krt-color-text-muted);
   font-size: var(--krt-text-xs);
   font-weight: 700;
@@ -39,13 +45,9 @@
 }
 
 .experience-card__title {
-  margin-bottom: var(--krt-space-3);
-  color: var(--krt-color-primary-bright);
+  margin: 0;
+  color: var(--krt-color-text);
   font-size: clamp(1.75rem, 4vw, 2.25rem);
-}
-
-.experience-card--mini .experience-card__title {
-  color: var(--krt-color-accent-strong);
 }
 
 .experience-card__title span {
@@ -63,9 +65,11 @@
 
 .experience-card__details {
   display: grid;
+  align-content: start;
   gap: var(--krt-space-2);
-  margin-block: 28px 20px;
-  padding-block: 20px;
+  min-height: var(--krt-space-10);
+  margin: 0;
+  padding-block: var(--krt-space-4);
   border-block: 1px solid var(--krt-color-border);
   color: var(--krt-color-text-muted);
   font-size: var(--krt-text-sm);
@@ -87,14 +91,10 @@
   display: flex;
   align-items: baseline;
   gap: var(--krt-space-2);
-  color: var(--krt-color-primary-bright);
+  color: var(--krt-color-accent);
   font-family: var(--krt-font-display);
   font-size: clamp(2.5rem, 6vw, 3rem);
   line-height: 1;
-}
-
-.experience-card--mini .experience-card__price {
-  color: var(--krt-color-accent-strong);
 }
 
 .experience-card__price span {
@@ -107,17 +107,22 @@
 }
 
 .experience-card__contact {
-  margin-top: 20px;
-  padding-top: 16px;
+  margin: 0;
+  padding-top: var(--krt-space-4);
   border-top: 1px solid var(--krt-color-border);
   color: var(--krt-color-text-muted);
-  font-size: var(--krt-text-xs);
+  font-size: var(--krt-text-sm);
   text-align: center;
 }
 
 .experience-card__action {
   width: 100%;
-  margin-top: 20px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .experience-card:hover {
+    transform: none;
+  }
 }
 
 @media (min-width: 768px) {

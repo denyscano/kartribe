@@ -69,7 +69,7 @@
 
 .galeria__media {
   overflow: hidden;
-  aspect-ratio: 3 / 2;
+  aspect-ratio: 16 / 10;
   background-color: var(--krt-color-surface-alt);
 }
 
