@@ -1,0 +1,99 @@
+/* ============================================================
+   KARTRIBE · PRECIOS
+   ============================================================ */
+
+.pricing__header {
+  max-width: 720px;
+}
+
+.pricing__grid {
+  display: grid;
+  gap: var(--krt-space-4);
+}
+
+.pricing-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 316px;
+  padding: 28px;
+}
+
+.pricing-card--featured {
+  border-color: var(--krt-color-accent);
+}
+
+.pricing-card__eyebrow,
+.pricing-card__badge {
+  min-height: 24px;
+  margin-bottom: var(--krt-space-2);
+  color: var(--krt-color-accent);
+  font-size: var(--krt-text-xs);
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.pricing-card__badge {
+  display: inline-flex;
+  align-items: center;
+  align-self: flex-start;
+  min-height: 0;
+  padding: 5px 12px;
+  border-radius: var(--krt-radius-full);
+  background-color: var(--krt-color-accent);
+  color: var(--krt-color-accent-text);
+  letter-spacing: 0.05em;
+}
+
+.pricing-card__title {
+  min-height: 2.2em;
+  margin-bottom: 16px;
+  font-size: clamp(1.35rem, 2.5vw, 1.75rem);
+}
+
+.pricing-card__price {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  margin-bottom: 4px;
+  font-family: var(--krt-font-display);
+  font-size: clamp(3.25rem, 6vw, 4rem);
+  line-height: 0.95;
+}
+
+.pricing-card__price span {
+  color: var(--krt-color-accent);
+  font-family: var(--krt-font-body);
+  font-size: 1rem;
+  font-weight: 600;
+}
+
+.pricing-card__description {
+  color: var(--krt-color-text-muted);
+  font-size: var(--krt-text-sm);
+}
+
+.pricing-card__action {
+  width: 100%;
+  margin-top: auto;
+}
+
+.pricing__note {
+  margin-top: 24px;
+  color: var(--krt-color-text-muted);
+  font-size: var(--krt-text-sm);
+  text-align: center;
+}
+
+@media (min-width: 640px) {
+  .pricing__grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 1024px) {
+  .pricing__grid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+}
